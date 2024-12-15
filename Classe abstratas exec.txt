@@ -1,0 +1,457 @@
+*****Exercicio 1 e 2 -******
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+Scanner scanner = new Scanner(System.in);
+Comissionado[] comissionados = new Comissionado[5];
+Comissionado cm= new Comissionado();
+
+for(int i=0;i< comissionados.length; i++){
+    System.out.println("Digite os dados do comissionado: ");
+
+    System.out.println("Nome: ");
+    cm.setNome(scanner.nextLine());
+
+    System.out.println("Endereço: ");
+    cm.setEndereco(scanner.nextLine());
+
+    System.out.println("Salario Base: ");
+    cm.setSalarioBase(scanner.nextDouble());
+
+    System.out.println("Comissão: ");
+    cm.setComissao(scanner.nextDouble());
+
+    System.out.println("Quantidade: ");
+    cm.setQuantidade(scanner.nextInt());
+
+    System.out.println("Nome: "+cm.getNome() + "\nEndereço: " + cm.getEndereco() + "\nSalario base: " + cm.getSalarioBase() + "\nComissao: " + cm.getComissao() + "\nQuantidade: " + cm.getQuantidade() + "\nO salário final é de: " + cm.calcularSalario());
+
+    
+
+            }
+
+        }
+    }
+
+**Classe abstrata Empregado:**
+
+public abstract class Empregado {
+    private String nome;
+    private String endereco;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public abstract double calcularSalario();
+
+
+
+}
+
+
+**classe Chefe:**
+
+public class Chefe extends Empregado {
+
+    private double salarioMensal;
+
+    public double getSalarioMensal() {
+        return salarioMensal;
+    }
+
+    public void setSalarioMensal(double salarioMensal) {
+        this.salarioMensal = salarioMensal;
+    }
+
+    public Chefe(){
+        System.out.println("chefe");
+    }
+    public Chefe(double salarioMensal){
+
+        this.salarioMensal=salarioMensal;
+
+    }
+
+    @Override
+
+    public double calcularSalario(){
+
+        return salarioMensal;
+
+    }
+
+}
+
+**classe Comissionado:**
+
+public class Comissionado extends Empregado{
+
+    private double salarioBase;
+    private double comissao;
+    private int quantidade;
+
+    public double getSalarioBase() {
+        return salarioBase;
+    }
+
+    public void setSalarioBase(double salarioBase) {
+        this.salarioBase = salarioBase;
+    }
+
+    public double getComissao() {
+        return comissao;
+    }
+
+    public void setComissao(double comissao) {
+        this.comissao = comissao;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+    public Comissionado(){
+        System.out.println("Comissionado");
+    }
+    public Comissionado(double salarioBase, double comissao, int quantidade){
+        this.salarioBase=salarioBase;
+        this.comissao=comissao;
+        this.quantidade=quantidade;
+    }
+
+    @Override
+
+    public double calcularSalario(){
+
+        return (salarioBase + comissao) * quantidade;
+
+    }
+
+}
+
+
+***** Exercicios 3 e 4 - *****
+
+
+***Classe main:***
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+Scanner scanner = new Scanner(System.in);
+
+Estatutario est= new Estatutario();
+
+System.out.println("Digite o nome: ");
+est.setNome(scanner.nextLine());
+
+System.out.println("Digite a matricula: ");
+est.setMatricula(scanner.nextLine());
+
+System.out.println("Digite a carga horaria: ");
+est.setCargaHoraria(scanner.nextInt());
+
+est.setValorDaHora(20);
+System.out.println("Seu salario é: " + est.calcularSalario());
+
+
+        }
+    }
+
+***classe professor:***
+
+public class Professor extends Funcionario{
+private int cargaHoraria;
+private double valorDaHora;
+
+
+    public int getCargaHoraria() {
+        return cargaHoraria;
+    }
+
+    public void setCargaHoraria(int cargaHoraria) {
+        this.cargaHoraria = cargaHoraria;
+    }
+
+    public double getValorDaHora() {
+        return valorDaHora;
+    }
+
+    public void setValorDaHora(double valorDaHora) {
+        this.valorDaHora = valorDaHora;
+    }
+
+    @Override
+public double calcularSalario(){
+
+    return cargaHoraria * valorDaHora;
+
+}
+
+
+}
+
+
+***Classe estatutario:***
+
+public class Estatutario extends Professor{
+
+private float trienio;
+private float rioprev;
+
+    public float getTrienio() {
+        return trienio;
+    }
+
+    public void setTrienio(float trienio) {
+        this.trienio = trienio;
+    }
+
+    public float getRioprev() {
+        return rioprev;
+    }
+
+    public void setRioprev(float rioprev) {
+        this.rioprev = rioprev;
+    }
+
+    @Override
+    public double calcularSalario(){
+
+    return getCargaHoraria() * getValorDaHora() + trienio - rioprev;
+}
+
+}
+
+
+***Classe funcionario:***
+
+public abstract class Funcionario {
+
+    private String matricula;
+    private String nome;
+    private String endereco;
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+    public abstract double calcularSalario();
+}
+
+
+
+***Classe contratado:***
+
+public class Contratado extends Professor{
+
+private float inss;
+
+    public float getInss() {
+        return inss;
+    }
+
+    public void setInss(float inss) {
+        this.inss = inss;
+    }
+
+    @Override
+    public double calcularSalario(){
+
+    return getCargaHoraria() * getValorDaHora() - inss;
+
+}
+
+}
+
+
+*****Exercicios 5 e 6 ******
+
+
+***Classe main***
+
+public class Main {
+    public static void main(String[] args) {
+
+
+
+        Formas[] formas = new Formas[5];
+        formas[0] = new BaseTriangular(5, 4);
+        formas[1] = new BaseCircular(7, 3);
+        formas[2] = new BaseTriangular(6, 5 );
+        formas[3] = new BaseCircular(8, 2);
+        formas[4] = new BaseTriangular(9, 3);
+
+        for (Formas forma : formas) {
+            System.out.println("Volume: " + forma.calcularVolume());
+        }
+    }
+}
+
+
+***classe formas:***
+
+public interface Formas {
+
+     double pi = 3.14;
+
+
+public double calcularVolume();
+
+}
+
+
+***classe formas tridimensionais***
+
+public abstract class FormasTridimensionais implements Formas{
+
+    private double altura;
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    public FormasTridimensionais(double altura){
+        this.altura=altura;
+    }
+
+
+
+}
+
+*** classe piramide ***
+
+public class Piramide extends FormasTridimensionais{
+
+    private double lado;
+
+    public double getLado() {
+        return lado;
+    }
+
+    public void setLado(double lado) {
+        this.lado = lado;
+    }
+
+    public Piramide(double altura, double lado){
+        super(altura);
+        this.lado=lado;
+    }
+    @Override
+    public double calcularVolume(){
+
+        return getAltura()/3 * lado;
+
+    }
+}
+
+
+*** classe base triangular***
+public class BaseTriangular extends Piramide{
+
+    private double base;
+
+    public double getBase() {
+        return base;
+    }
+
+    public void setBase(double base) {
+        this.base = base;
+    }
+
+    public BaseTriangular(double altura, double base){
+        super(altura,base);
+        this.base=base;
+    }
+
+
+    @Override
+
+    public double calcularVolume(){
+
+        return(base * base)/2 * getAltura();
+
+    }
+}
+
+***classe base circular***
+
+
+public class BaseCircular extends Piramide{
+
+    private double raio;
+
+    public double getRaio() {
+        return raio;
+    }
+
+    public void setRaio(double raio) {
+        this.raio = raio;
+    }
+
+    public BaseCircular(double raio, double altura){
+        super(altura,raio);
+        this.raio=raio;
+
+    }
+
+    @Override
+    public double calcularVolume(){
+        return pi * raio * raio * getAltura();
+    }
+
+
+
+
+}
+
+
+
+
+
+
+

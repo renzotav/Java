@@ -1,0 +1,119 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Courier New;}{\f1\fmodern JetBrains Mono;}}
+{\colortbl ;\red0\green77\blue187;\red207\green142\blue109;\red188\green190\blue196;\red86\green168\blue245;\red199\green125\blue187;\red42\green172\blue184;\red106\green171\blue115;\red0\green176\blue80;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\f0\fs22\lang1046\par
+Objetivo: Trabalhar com arrays.\par
+\par
+1) Implemente, compile e rode o programa a seguir, e depois responda: \par
+    a) Quando se cria um array de valores num\'e9ricos, com que valor os seus elementos s\'e3o automaticamente inicializados?\par
+\cf1\b 0\cf0\b0\par
+    b) Como se faz para saber qual o n\'famero de elementos de um array? \cf1\b Designa o n\'famero entre [], por exemplo, int[5], aqui temos um vetor que armazena 5 valores, \{0,1,2,3,4\}. Sempre come\'e7a pelo indice 0\cf0\b0\par
+\par
+public class Array0\{\par
+\tab public static void main(String argv[])\{\par
+\tab\tab int cont;\tab\par
+            int[] dados = new int[6];\par
+            System.out.println("O n\'famero de elementos do array dados \'e9: "+ dados.length);\par
+\tab\tab for (cont = 0; cont < dados.length; cont++ )\{\par
+\tab\tab\tab System.out.println("O elemento de \'edndice "+cont+ \par
+" vale "+ dados[cont]);\par
+\tab\tab\}\par
+\tab\}\par
+\}\par
+2) Defina uma classe chamada Array1.\par
+    Esta classe dever\'e1 conter apenas o m\'e9todo main. \par
+    Dentro do m\'e9todo main declare uma vari\'e1vel array inteira chamada dados com 6 elementos e, usando um inicializador de array, inicialize-a com os valores 1, 4, 9, 16, 25, 36. \par
+    Em seguida, utilize um loop for para imprimir os valores de cada um destes elementos. A sa\'edda do seu programa dever\'e1 ser a seguinte:\par
+O elemento de \'edndice 0 vale 1.\par
+O elemento de \'edndice 1 vale 4.\par
+O elemento de \'edndice 2 vale 9.\par
+O elemento de \'edndice 3 vale 16.\par
+O elemento de \'edndice 4 vale 25.\par
+O elemento de \'edndice 5 vale 36.\par
+\par
+
+\pard\box\brdrdash\brdrw0 \cf2\f1\fs20 import \cf3 java.util.Scanner;\line\line\cf2 public class \cf3 Array1 \{\line\line         \cf2 public static void \cf4 main\cf3 (String[] args) \{\line\line         Scanner sc = \cf2 new \cf3 Scanner(System.\cf5\i in\cf3\i0 );\line\line             \cf2 int\cf3 [] dados = \cf2 new int\cf3 [\cf6 6\cf3 ];\line\line\line           \cf2 for\cf3 (\cf2 int \cf3 i=\cf6 0\cf3 ;i<\cf6 6\cf3 ;i++)\{\line               System.\cf5\i out\cf3\i0 .println(\cf7 "Digite seis valores distintos: "\cf3 );\line               dados[i] = sc.nextInt();\line           \}\line\line               System.\cf5\i out\cf3\i0 .println(\cf7 "O elemento de \f0\'ed\f1 ndice 0 vale: " \cf3 + dados[\cf6 0\cf3 ]);\line               System.\cf5\i out\cf3\i0 .println(\cf7 "O elemento de \f0\'ed\f1 ndice 1 vale: " \cf3 + dados[\cf6 1\cf3 ]);\line               System.\cf5\i out\cf3\i0 .println(\cf7 "O elemento de \f0\'ed\f1 ndice 2 vale: " \cf3 + dados[\cf6 2\cf3 ]);\line               System.\cf5\i out\cf3\i0 .println(\cf7 "O elemento de \f0\'ed\f1 ndice 3 vale: " \cf3 + dados[\cf6 3\cf3 ]);\line               System.\cf5\i out\cf3\i0 .println(\cf7 "O elemento de \f0\'ed\f1 ndice 4 vale: " \cf3 + dados[\cf6 4\cf3 ]);\line               System.\cf5\i out\cf3\i0 .println(\cf7 "O elemento de \f0\'ed\f1 ndice 5 vale: " \cf3 + dados[\cf6 5\cf3 ]);\line\line\line         \}\line\}\line\par
+
+\pard\cf0\f0\fs22\par
+\par
+\par
+3) Defina uma classe chamada Array2.\par
+    Esta classe dever\'e1 conter apenas o m\'e9todo main. \par
+    Dentro do m\'e9todo main declare uma vari\'e1vel array inteira chamada dados1 com 6 elementos e, usando um inicializador de array, inicialize-a com os valores 1, 4, 9, 16, 25, 36. \par
+    Declare tamb\'e9m uma outra vari\'e1vel inteira chamada dados2 e atribua a ela uma inst\'e2ncia de um array de inteiros de 6 elementos.\par
+     Construa um loop for para inicializar cada um dos elementos de dados2 com a raiz quadrada dos respectivos elementos de dados1. No corpo deste loop, al\'e9m de inicializar cada elemento de dados2 voc\'ea dever\'e1 imprimir: \par
+"A raiz quadrada de (aqui dever\'e1 aparecer o valor de um elemento de dados1 indexado pela vari\'e1vel de loop) \'e9 (aqui dever\'e1 aparecer o valor de um elemento de dados2, j\'e1 inicializado, indexado pela vari\'e1vel de loop)."\par
+de forma que a sa\'edda de seu programa dever\'e1 ser:\par
+A raiz quadrada de 1 \'e9 1.\par
+A raiz quadrada de 4 \'e9 2.\par
+A raiz quadrada de 9 \'e9 3.\par
+A raiz quadrada de 16 \'e9 4.\par
+A raiz quadrada de 25 \'e9 5.\par
+A raiz quadrada de 36 \'e9 6.\par
+\par
+   Para o c\'e1lculo da raiz quadrada utilize o m\'e9todo sqrt da classe Math. Por exemplo, para obter a raiz quadrada do elemento de \'edndice j do array dados1, voc\'ea deve usar Math.sqrt(dados1[j]). Note que o valor de retorno do m\'e9todo sqrt \'e9 double. Portanto, para fazer a atribui\'e7\'e3o da raiz quadrada de um elemento de dados1 para um elemento de dados2 (que \'e9 um array de inteiros), \'e9 necess\'e1rio fazer um molde (cast) expl\'edcito.\par
+\par
+\par
+
+\pard\box\brdrdash\brdrw0 \cf2\f1\fs20 import \cf3 java.util.Scanner;\line\line\cf2 public class \cf3 Array2 \{\line\line         \cf2 public static void \cf4 main\cf3 (String[] args) \{\line\line\line         Scanner sc = \cf2 new \cf3 Scanner(System.\cf5\i in\cf3\i0 );\line\line             \cf2 int\cf3 [] dados1 = \{\cf6 1\cf3 ,\cf6 4\cf3 ,\cf6 9\cf3 ,\cf6 16\cf3 ,\cf6 25\cf3 ,\cf6 36\cf3\};\line             \cf2 int\cf3 [] dados2 = \cf2 new int\cf3 [\cf6 6\cf3 ];\line\line             \cf2 for\cf3 (\cf2 int \cf3 i=\cf6 0\cf3 ;i<dados1.\cf5 length\cf3 ;i++) \{\line                 dados2[i]=(\cf2 int\cf3 ) Math.\i sqrt\i0 (dados1[i]);\line                 System.\cf5\i out\cf3\i0 .println(\cf7 "A raiz quadrada de " \cf3 + dados1[i] +\cf7 " \f0\'e9\f1 : " \cf3 + dados2[i]);\line             \}\par
+
+\pard\cf0\f0\fs22\par
+\par
+4) Defina uma classe chamada ArrayDiasMes.\par
+    Esta classe dever\'e1 conter o m\'e9todo main e o m\'e9todo diasMes.\par
+    O m\'e9todo main dever\'e1 apenas imprimir:\par
+O n\'famero de dias de cada m\'eas do ano \'e9:\par
+chamando em seguida o m\'e9todo diasMes. O m\'e9todo diasMes deve ser declarado sem nenhum par\'e2metro e n\'e3o deve retornar nada.\par
+    No m\'e9todo diasMes, declare uma vari\'e1vel array inteira e, por meio de um inicializador de arrays, atribua a ela a seq\'fc\'eancia de valores correspondente aos n\'fameros de dias de cada m\'eas: \{31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31\}.\par
+    Depois, fazendo uso de um loop for imprima o n\'famero de dias de cada m\'eas, contido em cada um dos elementos do array dias. A sa\'edda do seu programa dever\'e1 ser:\par
+O m\'eas 1 possui 31 dias.\par
+O m\'eas 2 possui 29 dias.\par
+O m\'eas 3 possui 31 dias.\par
+O m\'eas 4 possui 30 dias.\par
+O m\'eas 5 possui 31 dias.\par
+O m\'eas 6 possui 30 dias.\par
+O m\'eas 7 possui 31 dias.\par
+O m\'eas 8 possui 31 dias.\par
+O m\'eas 9 possui 30 dias.\par
+O m\'eas 10 possui 31 dias.\par
+O m\'eas 11 possui 30 dias.\par
+O m\'eas 12 possui 31 dias.\par
+\par
+
+\pard\box\brdrdash\brdrw0 \cf2\f1\fs20 public class \cf3 ArrayDiasMes \{\line\line         \cf2 public static void \cf4 main\cf3 (String[] args) \{\line\line             System.\cf5\i out\cf3\i0 .println(\cf7 "O n\f0\'fa\f1 mero de dias de cada m\f0\'ea\f1 s do ano \f0\'e9\f1 : "\cf3 );\line             \i diasMes\i0 ();\line         \}\line         \cf2 public static void \cf4 diasMes\cf3 ()\{\line             \cf2 int\cf3 [] diasMes = \{\cf6 31\cf3 , \cf6 29\cf3 , \cf6 31\cf3 , \cf6 30\cf3 , \cf6 31\cf3 , \cf6 30\cf3 , \cf6 31\cf3 , \cf6 31\cf3 , \cf6 30\cf3 , \cf6 31\cf3 , \cf6 30\cf3 , \cf6 31\cf3\};\line\cf2 int \cf3 mes = \cf6 1\cf3 ;\line             \cf2 for \cf3 (\cf2 int \cf3 i = \cf6 0\cf3 ; i < diasMes.\cf5 length\cf3 ; i++) \{\line                 System.\cf5\i out\cf3\i0 .println(\cf7 "O mes " \cf3 + mes++ + \cf7 " possui " \cf3 + diasMes[i] + \cf7 "dias"\cf3 );\line             \}\line         \}\line\}\par
+
+\pard\cf0\f0\fs22\par
+\par
+5) Defina uma classe chamada Media3 contendo dois m\'e9todos: o m\'e9todo main e o m\'e9todo calculaMedia.\par
+    O m\'e9todo main deve ser respons\'e1vel pela impress\'e3o na tela da seguinte frase:\par
+"C\'e1lculo da m\'e9dia de 4 notas. "\par
+e deve chamar, em seguida, o m\'e9todo calculaMedia.\par
+   O m\'e9todo calculaMedia deve ser declarado sem nenhum par\'e2metro e n\'e3o deve retornar nada.\par
+   No m\'e9todo calculaMedia, voc\'ea deve declarar a vari\'e1vel inteira de loop (chame-a de cont, por exemplo), uma vari\'e1vel double com o nome de soma, a qual dever\'e1 ser inicializada com zero, e uma vari\'e1vel double array chamada notas. Atribua a ela uma inst\'e2ncia de um array de double de 4 elementos.\par
+   Construa um loop for para inicializar cada um dos elementos da vari\'e1vel array notas. Estes elementos dever\'e3o ser inicializados por meio do uso do m\'e9todo Math.random(), isto \'e9, atribua aos elementos de notas o retorno de Math.random() multiplicado por 10.\par
+    Em seguida, construa um segundo loop for (voc\'ea poderia tamb\'e9m fazer tudo em um \'fanico loop). Neste loop voc\'ea dever\'e1 imprimir o valor de cada um dos elementos de notas inicializados anteriormente (Ex: A nota 1 vale ...) e tamb\'e9m somar na vari\'e1vel soma o valor de cada um destes elementos.\par
+   Para obter a m\'e9dia, basta ent\'e3o dividir a vari\'e1vel soma por 4. Ap\'f3s feito isto, exiba o resultado.\par
+\par
+
+\pard\box\brdrdash\brdrw0 \cf2\f1\fs20 public class \cf3 Media3 \{\line\line         \cf2 public static void \cf4 main\cf3 (String[] args) \{\line\line             System.\cf5\i out\cf3\i0 .println(\cf7 "C\f0\'e1\f1 lculo da m\f0\'e9\f1 dia de 4 notas. "\cf3 );\line             \i cauculaMedia\i0 ();\line         \}\line         \cf2 public static void \cf4 cauculaMedia\cf3 ()\{\line             \cf2 int \cf3 cont;\line             \cf2 double \cf3 soma = \cf6 0\cf3 ;\line             \cf2 double\cf3 [] notas = \cf2 new double\cf3 [\cf6 4\cf3 ];\line\line             \cf2 for \cf3 (cont = \cf6 0\cf3 ; cont < notas.\cf5 length\cf3 ; cont++) \{\line                 notas[cont] = Math.\i random\i0 () * \cf6 10\cf3 ;\line             \}\line\line             \cf2 for\cf3 (cont = \cf6 0\cf3 ; cont < notas.\cf5 length\cf3 ; cont++) \{\line\line                 System.\cf5\i out\cf3\i0 .println(\cf7 "A nota " \cf3 + (cont + \cf6 1\cf3 ) + \cf7 " vale " \cf3 + notas[cont]);\line soma = soma + notas[cont];\line\line             \}\line             \cf2 double \cf3 media = soma / notas.\cf5 length\cf3 ;\line             System.\cf5\i out\cf3\i0 .println(\cf7 "A m\f0\'e9\f1 dias das notas \f0\'e9\f1 : " \cf3 + media);\line\line         \}\line\}\par
+
+\pard\cf0\f0\fs22\par
+\par
+6) Implemente e compile o programa a seguir. Anote a mensagem de erro fornecida pelo compilador. O que ela quer dizer?\par
+\par
+public class Array1\{\par
+\tab public static void main(String argv[])\{\par
+\tab\tab int cont;\par
+            int[] dados;\par
+\tab\tab dados = \{1, 2, 3, 4, 5, 6\};\par
+\tab\tab for (cont = 0; cont < dados.length; cont++ )\{\par
+\tab\tab\tab System.out.println(dados[cont]);\par
+\tab\tab\}\par
+\tab\}\par
+\}\par
+\par
+\cf1\b Que a express\'e3o foi inicializada de forma errada. Faltou o new int[] antes dos valores, ou ent\'e3o colocar tudo na mesma fileira: \cf8 int[] dados = \{1, 2, 3, 4, 5, 6\};\cf0\b0\par
+\tab\tab\par
+\par
+}
+ 

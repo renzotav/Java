@@ -1,0 +1,525 @@
+Classe funcionario:
+
+public class Funcionario {
+
+    private int matricula;
+    private String nome;
+
+    public Funcionario(String nome, int matricula) {
+        this.nome = nome;
+        this.matricula = matricula;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+
+    void exibeDados(){
+System.out.println("Nome" + nome + "\nMatricula: " + matricula);
+    }
+}
+
+
+Classe Gerente:
+
+public class Gerente {
+
+    private int matricula;
+    private String nome;
+
+    public Gerente(String nome, int matricula) {
+        this.nome = nome;
+        this.matricula = matricula;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+
+    void exibeDados(){
+        System.out.println("Nome" + nome + "\nMatricula: " + matricula);
+    }
+}
+
+
+
+
+
+classe administrativo:
+
+public class Administrativo extends Assistente{
+
+    private String turno;
+    private double adcionalNoturno;
+
+    public Administrativo(String nome, int matricula, String turno, double adcionalNoturno){
+
+        super(nome, matricula);
+        this.turno=turno;
+        this.adcionalNoturno=adcionalNoturno;
+    }
+
+
+}
+
+classe animal:
+
+public class Animal {
+
+    private String nome;
+    private String raca;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getRaca() {
+        return raca;
+    }
+
+    public void setRaca(String raca) {
+        this.raca = raca;
+    }
+
+    public Animal(){
+
+    }
+
+    public Animal(String nome){
+
+        this.nome=nome;
+
+    }
+
+    public String caminha(){
+
+        return "Animal caminhando";
+
+    }
+}
+
+classe Assistente:
+
+
+public class Assistente extends Funcionario {
+    public Assistente(String nome, int matricula) {
+        super(nome, matricula);
+    }
+
+    @Override
+    public void exibeDados() {
+        System.out.println("Assistente - Nome: " + getNome() + ", Matrícula: " + getMatricula());
+    }
+}
+
+
+Classe Cachorro:
+
+public class Cachorro extends Animal {
+
+    public Cachorro(String nome) {
+        super(nome);
+
+    }
+
+    public String late() {
+
+        return "Cachorro está latindo";
+
+    }
+
+    @Override
+    public String caminha() {
+
+        return "Cachorro está caminhando";
+
+    }
+}
+
+
+
+
+
+Classe CamaroteInferior:
+
+public class CamaroteInferior extends VIP{
+
+   private String locCamInf = "Setor A, primeiro andar.";
+
+   void localCamInf(){
+       System.out.println("O local do camarote inferior é: " + locCamInf);
+   }
+
+}
+
+
+Classe CamaroteSuperior:
+
+public class CamaroteSuperior extends VIP {
+
+    private double valorAdcionalCamSup = 20;
+    private String locCamSup = "Segundo andar, setor B";
+
+    void localCamSup(){
+        System.out.println("Local do camarote superior: " + locCamSup);
+    }
+    void imprimeValorCamSup(){
+        System.out.println("O valor do camarote superior é de: " + (getValorIngressoReais()+valorAdcionalCamSup));
+    }
+}
+
+
+
+
+
+Classe Gato:
+
+public class Gato extends Animal {
+
+    public Gato(String nome) {
+        super(nome);
+
+    }
+
+    public String mia() {
+
+        return "Gato está miando";
+
+    }
+
+    @Override
+    public String caminha() {
+
+        return "Gato está caminhando";
+
+    }
+}
+
+
+
+
+Classe Imovel:
+
+public class Imovel {
+    private String endereco = "Rua K, numero: 100";
+    private double preco = 100000;
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+}
+
+
+Classe Ingresso:
+
+public class Ingresso {
+    private double valorIngressoReais = 10;
+
+    public double getValorIngressoReais() {
+        return valorIngressoReais;
+    }
+
+    public void setValorIngressoReais(double valorIngressoReais) {
+        this.valorIngressoReais = valorIngressoReais;
+    }
+
+    void imprimeValor(){
+        System.out.println("Valor: " + valorIngressoReais);
+    }
+}
+
+
+Classe Miseravel:
+
+public class Miseravel extends Pessoa{
+
+
+    public String mendiga(){
+        return "Mendigando";
+    }
+}
+
+
+Classe Normal:
+
+public class Normal extends Ingresso{
+
+    void imprimeValorIngresso(){
+
+        System.out.println("Valor normal do ingresso: " + getValorIngressoReais());
+
+    }
+}
+
+
+Classe Novo:
+
+public class Novo extends Imovel{
+
+    private double valorAdcionalImvNovo = 10000;
+
+    public double getValorAdcionalImvNovo() {
+        return valorAdcionalImvNovo;
+    }
+
+    public void setValorAdcionalImvNovo(double valorAdcionalImvNovo) {
+        this.valorAdcionalImvNovo = valorAdcionalImvNovo;
+    }
+
+    void imprimeValorImvNovo(){
+        System.out.println("O valor adcional de um imóvel novo é de: " + (getPreco()+valorAdcionalImvNovo));
+    }
+
+}
+
+
+Classe Pessoa:
+
+public class Pessoa {
+
+    private String nome;
+    private int idade;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+public Pessoa(String nome, int idade){
+        this.nome=nome;
+        this.idade=idade;
+}
+    public Pessoa(){
+
+    }
+
+}
+
+
+Classe Pobre
+
+public class Pobre extends Pessoa{
+
+    public String trabalha(){
+return "Trabalhando";
+
+    }
+
+    
+}
+
+
+Classe Rica:
+
+public class Rica extends Pessoa{
+
+
+    private double dinheiro;
+
+    public String fazCompras(){
+return "Comprando coisas";
+    }
+}
+
+
+Classe Tecnico:
+
+public class Tecnico extends Assistente{
+
+    private double bonusSalario;
+
+    public double getBonusSalario() {
+        return bonusSalario;
+    }
+
+    public void setBonusSalario(double bonusSalario) {
+        this.bonusSalario = bonusSalario;
+    }
+
+    public Tecnico(String nome, int matricula, double bonusSalario) {
+        super(nome, matricula);
+        this.bonusSalario = bonusSalario;
+    }
+
+    @Override
+    public void exibeDados() {
+        System.out.println("Técnico - Nome: " + getNome() + ", Matrícula: " + getMatricula() + ", Bônus Salarial: " + bonusSalario);
+    }
+}
+
+
+Classe Velho:
+
+public class Velho extends Imovel{
+
+    private double descontoValorImvVelho = 10000;
+
+    public double getDescontoValorImvVelho() {
+        return descontoValorImvVelho;
+    }
+
+    public void setDescontoValorImvVelho(double descontoValorImvVelho) {
+        this.descontoValorImvVelho = descontoValorImvVelho;
+    }
+
+    void impriveValorImvVelho(){
+        System.out.println("Valor final do imovel é de: " + (getPreco()-descontoValorImvVelho));
+    }
+
+}
+
+
+Classe VIP:
+
+public class VIP extends Ingresso{
+
+   private double valorAdcional = 10;
+
+    void imprimeValorVIP(){
+        System.out.println("Valor do ingresso VIP: " + (getValorIngressoReais()+valorAdcional) );
+    }
+}
+
+
+
+
+
+Classe main:
+
+import java.util.Scanner;
+
+public class Teste {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        Administrativo adm = new Administrativo("Renzo", 80245076, "Noturno", 1000);
+        System.out.println("Nome do adm: " + adm.getNome() + "\nNumero de matricula: " + adm.getMatricula());
+
+        Tecnico tec = new Tecnico("Tavares", 95508263, 2000);
+        System.out.println("Nome do tecnico: " + tec.getNome() + "\nNumero de matricula: " + tec.getMatricula());
+
+        Cachorro dog = new Cachorro("Bruce");
+        dog.late();
+
+        Gato cat = new Gato("Lolo");
+        cat.mia();
+
+        dog.caminha();
+        cat.caminha();
+
+        Rica ric = new Rica();
+        System.out.println("Pessoa rica: " + ric.fazCompras());
+
+        Pobre pob = new Pobre();
+        System.out.println("Pessoa pobre: " + pob.trabalha());
+
+        Miseravel misrvl = new Miseravel();
+        System.out.println("Pessoa miseravel: " + misrvl.mendiga());
+
+        Ingresso ings = new Ingresso();
+
+        CamaroteSuperior CamS = new CamaroteSuperior();
+        VIP vip = new VIP();
+
+        for (int i = 0; i < 1; i++) {
+
+            System.out.println("Digite 1 para ingresso normal ou 2 para camarote: ");
+            int numIngresso = scanner.nextInt();
+
+            if (numIngresso == 1) {
+                System.out.println("Voce deseja um ingresso normal.");
+                ings.imprimeValor();
+            } else if (numIngresso == 2) {
+                for (int cont = 0; cont < 1; cont++) {
+                    System.out.println("Voce deseja um ingresso VIP. Digite 1 para camarote inferior ou 2 para camarote superior: ");
+                    int numCamarote = scanner.nextInt();
+                    if (numCamarote == 1) {
+                        System.out.println("Voce deseja camarote inferior.");
+                        vip.imprimeValorVIP();
+                    } else if (numCamarote == 2) {
+                        System.out.println("Voce deseja camarote superior.");
+                        CamS.imprimeValorCamSup();
+                    } else {
+                        System.out.println("Erro");
+                    }
+                }
+
+            } else {
+                System.out.println("erro");
+            }
+            Novo imvNovo = new Novo();
+            Velho imvVelho = new Velho();
+
+            for (int cont1 = 0; cont1 < 1; cont1++) {
+
+                System.out.println("Digite 1 para imovel novo ou 2 para velho: ");
+                int numImovel = scanner.nextInt();
+
+                if (numImovel == 1) {
+                    System.out.println("Voce deseja um imovel novo.");
+                    imvNovo.imprimeValorImvNovo();
+                } else if (numImovel == 2) {
+                    System.out.println("Voce deseja um imovel velho.");
+                    imvVelho.impriveValorImvVelho();
+
+                } else {
+                    System.out.println("erro");
+                }
+
+            }
+
+        }
+    }
+}

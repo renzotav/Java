@@ -1,0 +1,132 @@
+Exercício 1 :
+
+Arquivo Main.java :
+
+
+public class Main {
+  public static void main(String[] args) {
+
+    Genero G1 = new Genero();
+    G1.setCodigo(123456);
+    G1. setDescricao("Ação");
+    System.out.println(G1.getCodigo());
+    System.out.println(G1.getDescricao());
+  }
+}
+
+
+Arquivo Genero.java :
+
+public class Genero{
+  private int codigo;
+  private String descricao;
+  
+
+  public void setCodigo(int codigo){
+    this.codigo = codigo;
+  }
+  public void setDescricao(String descricao){
+    this.descricao = descricao;
+  }
+
+  public int getCodigo(){
+    return this.codigo;
+  }
+  public String getDescricao(){
+    return this.descricao;
+  }
+}
+
+retorno :
+
+123456
+Ação
+
+------FIM------
+
+
+Exercício 2 : 
+
+Arquivo Main.java :
+
+public class Main {
+  public static void main(String[] args) {
+
+    Funcionario F1 = new Funcionario();
+    F1.setMatricula(123456);
+    F1.setNome("Renzo");
+    F1.setSalario(2572.00);
+    System.out.println(F1.getMatricula());
+    System.out.println(F1.getNome());
+    System.out.println(F1.getSalario());
+  }
+}
+
+
+Arquivo Funcionario.java :
+
+public class Funcionario{
+  private int matricula;
+  private String nome;
+  private double salario;
+
+  public void setSalario(double salario){
+    this.salario = salario;
+  }
+
+
+  public void setMatricula(int matricula){
+    this.matricula = matricula;
+  }
+  public void setNome(String nome){
+    this.nome = nome;
+  }
+
+  public int getMatricula(){
+    return this.matricula;
+  }
+  public String getNome(){
+    return this.nome;
+  }
+  public double getSalario(){
+    return this.salario;
+  }
+}
+
+
+retorno :
+
+123456
+Renzo
+2572.0
+
+-------FIM------
+
+Exercício 3 :
+
+Arquivo Main.java :
+
+public class Main {
+    public static void main(String[] args) {   
+      
+        Veiculo v1 = new Veiculo();
+      
+        v1.nome = "Fiesta";
+
+      
+        System.out.println("Nome do veículo: " + v1.nome);
+
+        for (int i = 0; i < 5; i++) {
+            v1.acelera();
+        }
+
+        v1.mostraVelocidade(); 
+    }
+}
+
+retorno : 
+
+Nome do veículo: Fiesta
+5.0
+
+-------FIM------

@@ -1,0 +1,104 @@
+Exercicio Café:
+
+classe testemaquinacafe:
+
+public class TesteMaquinaCafe {
+    public static void main(String[] args) {
+
+        MaquinaCafe mqn = new MaquinaCafe();
+
+        mqn.acucarDisponivel = 30;
+
+    }
+
+}
+
+MaquinaCafe:
+
+public class MaquinaCafe {
+
+    int acucarDisponivel;
+
+    void fazerCafe(){
+
+        fazerCafe(10);
+
+    }
+
+    void fazerCafe(int quantidadeAcucar){
+
+        if(acucarDisponivel < quantidadeAcucar){
+            System.out.println("Não há açucar o suficiente");
+        }else{
+            acucarDisponivel -= quantidadeAcucar;
+            System.out.println("Fazendo cafezinho com " + quantidadeAcucar + " gramas de açucar.");
+
+        }
+
+
+
+    }
+}
+
+
+Exercicio Alunos:
+
+CLasse Alunos: 
+
+public class Alunos{
+
+    String nome;
+    int idade;
+    int numeroMatricula;
+
+    void Alunos(String nome, int idade, int numeroMatricula){
+        this.nome = nome;
+        this.idade = idade;
+        this.numeroMatricula = numeroMatricula;
+    }
+
+    public boolean verificarMaioridade(){
+        if(this.idade >= 18){
+            System.out.println("maior de idade\n");
+            return true;
+
+        }else{
+            System.out.println("menor de idade\n");
+            return false;
+            
+        }
+        
+    }
+    void imprimirInformacoes(){
+        System.out.println("Nome: " + nome);
+        System.out.println("\nIdade: " + idade);
+        System.out.println("\nNumero Matricula: " + numeroMatricula);
+    }
+}
+
+
+Classe main verificaAlunos :
+
+import java.util.Scanner;
+
+public class verificaAlunos {
+    public static void main(String[] args) {
+        Alunos alu = new Alunos();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite seu nome: ");
+        alu.nome = scanner.nextLine();
+
+        System.out.println("Digite sua idade: ");
+        alu.idade = scanner.nextInt();
+        alu.verificarMaioridade();
+
+        System.out.println("Digite o numero da sua matrícula: ");
+        alu.numeroMatricula = scanner.nextInt();
+
+        alu.imprimirInformacoes();
+
+
+    }
+
+}

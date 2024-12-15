@@ -1,0 +1,315 @@
+***Classe Main***
+
+public class Main {
+    public static void main(String[] args) {
+
+        Endereco endereco = new Endereco();
+
+        endereco.cadastrar("Rua itapera","casa","286","Casa 23/102", "Iraja", "RJ", "RJ");
+
+        Funcionario funcionario = new Funcionario();
+
+        funcionario.cadastrar(2024024,"Desenvolvedor Junior",1000,"24/05/2024");
+        funcionario.reajustarSalario(100);
+        funcionario.promover("Desenvolvedor Pleno");
+
+        Cliente cliente = new Cliente();
+
+        cliente.setNome("Renzo");
+        cliente.setDataNascimento("24/05/1999");
+        cliente.cadastrar("35681","Analista","12345678950","22255599");
+    }
+}
+
+
+***Classe Eendereço***
+
+public class Endereco {
+
+
+
+    private String logradouro;
+    private String tipoLogradouro;
+    private String numero;
+    private String complemento;
+    private String bairro;
+    private String cidade;
+    private String estado;
+
+
+
+    public Endereco(){
+        System.out.println("Endereco: ");
+    }
+    public Endereco(String tipoLogradouro){
+        this.tipoLogradouro=tipoLogradouro;
+    }
+    public Endereco(String logradouro,String numero,String complemento,String bairro){
+
+        this.logradouro=logradouro;
+        this.numero=numero;
+        this.complemento=complemento;
+        this.bairro=bairro;
+
+    }
+    public Endereco( String cidade, String estado){
+        this.cidade=cidade;
+        this.estado=estado;
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
+
+    public String getTipoLogradouro() {
+        return tipoLogradouro;
+    }
+
+    public void setTipoLogradouro(String tipoLogradouro) {
+        this.tipoLogradouro = tipoLogradouro;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    void cadastrar(String logradouro, String tipoLogradouro,String numero,String complemento,
+                   String bairro,String cidade,String estado){
+
+        this.logradouro=logradouro;
+        this.tipoLogradouro = tipoLogradouro;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+
+        System.out.println("Os dados de endereco: Logradouro, tipo, numero, complemento, bairro, cidade e estado respecticamente " + "\n"  + logradouro + "\n" + tipoLogradouro
+                + "\n" + numero + "\n" + complemento + "\n" + bairro + "\n" + cidade + "\n" + estado);
+    }
+}
+
+
+***Classe Pessoa***
+
+public abstract class Pessoa {
+   private String nome;
+   private String dataNascimento;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    void cadastrar(String nome, String dataNascimento){
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+
+    }
+    public Pessoa(String nome, String dataNascimento){
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+    }
+    public Pessoa(){}
+}
+
+
+***Classe Funcionario***
+
+public class Funcionario extends Pessoa{
+
+    private int matricula;
+    private String cargo;
+    private float salario;
+    private String dataAdmissao;
+
+    public Funcionario(){
+        System.out.println("\nFuncionario: ");
+    }
+    public Funcionario(int matricula, String cargo){
+        this.matricula=matricula;
+        this.cargo=cargo;
+    }
+    public Funcionario(float salario, String dataAdmissao){
+        this.salario=salario;
+        this.dataAdmissao=dataAdmissao;
+    }
+    public Funcionario(String nome, String dataNascimento){
+        super(nome,dataNascimento);
+    }
+
+    void cadastrar(int matricula, String cargo, float salario, String dataAdmissao){
+        this.matricula=matricula;
+        this.cargo=cargo;
+        this.salario=salario;
+        this.dataAdmissao=dataAdmissao;
+
+
+        System.out.println("Dados do funcionario: matricula, cargo, salario e data de admissao respectivamente " + matricula + "\n" + cargo + "\n" + salario + "\n" + dataAdmissao);
+    }
+    float percentual;
+
+    void reajustarSalario(float percentual){
+
+       this.percentual=percentual;
+       System.out.println("Salario reajustado: " + (salario + (percentual * salario/100)));
+
+    }
+    String novoCargo;
+void promover(String novoCargo){
+
+        this.novoCargo = novoCargo;
+    System.out.println("Seu novo cargo é: " + novoCargo);
+
+}
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public float getSalario() {
+        return salario;
+    }
+
+    public void setSalario(float salario) {
+        this.salario = salario;
+    }
+
+    public String getDataAdmissao() {
+        return dataAdmissao;
+    }
+
+    public void setDataAdmissao(String dataAdmissao) {
+        this.dataAdmissao = dataAdmissao;
+    }
+}
+
+
+***Classe CLiente***
+
+public class Cliente extends Pessoa{
+    private String codigo;
+    private String profissao;
+    private String cpf;
+    private String rg;
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+
+    public Cliente(){
+        System.out.println("\nCliente: ");
+    }
+    public Cliente(String codigo){
+        this.codigo=codigo;
+
+    }
+
+    public Cliente(String profissao, String cpf,String rg){
+        this.profissao=profissao;
+        this.cpf=cpf;
+        this.rg=rg;
+    }
+    public Cliente(String nome, String dataNascimento){
+        super(nome,dataNascimento);
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getProfissao() {
+        return profissao;
+    }
+
+    public void setProfissao(String profissao) {
+        this.profissao = profissao;
+    }
+
+    void cadastrar(String codigo, String profissao, String cpf, String rg){
+        this.profissao=profissao;
+        this.codigo=codigo;
+        this.cpf=cpf;
+        this.rg=rg;
+
+        System.out.println("Dados do cliente codigo, profissao, nome, data de nascimento, rg e cpf respectivamente \n" + codigo +"\n"+profissao+"\n"+getNome()+"\n"+getDataNascimento() + "\n" + rg + "\n" + cpf );
+    }
+}

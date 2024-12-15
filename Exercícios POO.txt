@@ -1,0 +1,456 @@
+Lista de exercícios POO Aula 4
+
+1) public class Retangulo {
+
+
+   public int base;
+   public int altura;
+}
+
+
+2) package exercicio02;
+
+public class UsaRetangulo {
+    public static void main(String[] args) {
+
+        Retangulo R1 = new Retangulo();
+        Retangulo R2 = new Retangulo();
+        Retangulo R3 = new Retangulo();
+
+        System.out.println("Valores do retangulo R1: ");
+        System.out.println("Base: " + R1.base);
+        System.out.println("Base: " + R1.altura);
+
+        R1.base = 5;
+        R1.altura = 3;
+        R2.base = 10;
+        R2.altura = 2;
+        R3.base = 8;
+        R3.altura = 6;
+
+        System.out.println("\nValores dos Retângulos R1, R2, R3: ");
+        System.out.println("Retangulo R1 base: " + R1.base + ", altura: " + R1.altura);
+
+        System.out.println("Retangulo R1 base: " + R2.base + ", altura: " + R2.altura);
+
+        System.out.println("Retangulo R1 base: " + R3.base + ", altura: " + R3.altura);
+
+
+    }
+}
+
+
+
+
+3) public class Retangulo {
+
+
+   public int base;
+   public int altura;
+
+   public void exibeArea(){
+      System.out.println("A área é: " + (base * altura));
+
+   }
+
+   public void exibePerimetro(){
+      System.out.println("O perímetro é: " + (2 * base + 2 * altura));
+   }
+}
+
+
+4) public class UsaRetangulo {
+    public static void main(String[] args) {
+
+        Retangulo R1 = new Retangulo();
+        Retangulo R2 = new Retangulo();
+        Retangulo R3 = new Retangulo();
+
+
+        R1.base = Integer.parseInt(args[0]);
+        R1.altura = Integer.parseInt(args[1]);
+        R2.base = Integer.parseInt(args[2]);
+        R2.altura = Integer.parseInt(args[3]);
+        R3.base = Integer.parseInt(args[4]);
+        R3.altura = Integer.parseInt(args[5]);
+
+        System.out.println("\nValores dos Retângulos R1, R2, R3: ");
+
+        System.out.println("Retangulo R1 base: " + R1.base + ", altura: " + R1.altura);
+
+        System.out.println("Retangulo R2 base: " + R2.base + ", altura: " + R2.altura);
+
+        System.out.println("Retangulo R3 base: " + R3.base + ", altura: " + R3.altura);
+
+R1.exibeArea();
+R1.exibePerimetro();
+
+R2.exibeArea();
+R2.exibePerimetro();
+
+R3.exibeArea();
+R3.exibePerimetro();
+    }
+}
+
+
+5) Classe UsaRetangulo:
+
+
+
+public class UsaRetangulo {
+    public static void main(String[] args) {
+
+        Retangulo R1 = new Retangulo(5, 10);
+
+
+
+        System.out.println(" A Base é: " + R1.base + ", A altura é: " + R1.altura);
+        R1.exibeArea();
+        R1.exibePerimetro();
+
+
+
+
+    }
+}
+
+
+Classe Retangulo:
+
+
+public class Retangulo {
+    public int base;
+    public int altura;
+
+
+    public Retangulo(int base, int altura) {
+        this.base = base;
+        this.altura = altura;
+    }
+
+    public void exibeArea() {
+        int area = base * altura;
+        System.out.println("A Área é: " + area);
+    }
+
+    public void exibePerimetro() {
+        int perimetro = 2 * (base + altura);
+        System.out.println("O Perímetro é: " + perimetro);
+    }
+}
+
+
+
+
+
+
+6) Classe UsaRetangulo:
+
+public class UsaRetangulo {
+    public static void main(String[] args) {
+
+        Retangulo R1 = new Retangulo(5, 10);
+
+
+        System.out.println("A Base é: " + R1.getBase() + ", A Altura é: " + R1.getAltura());
+        R1.exibeArea();
+        R1.exibePerimetro();
+
+
+        R1.setBase(7);
+        R1.setAltura(14);
+
+
+        System.out.println("A Nova Base é: " + R1.getBase() + ", A Nova Altura é: " + R1.getAltura());
+        R1.exibeArea();
+        R1.exibePerimetro();
+    }
+}
+
+Classe Retangulo:
+
+public class Retangulo {
+    private int base;
+    private int altura;
+
+    public String getAltura() {
+        return String.valueOf(altura);
+    }
+
+    public void setAltura(int altura) {
+        this.altura = altura;
+    }
+
+    public int getBase() {
+        return base;
+    }
+
+    public void setBase(int base) {
+        this.base = base;
+    }
+
+
+
+
+    public Retangulo(int base, int altura) {
+        this.base = base;
+        this.altura = altura;
+    }
+
+    public void exibeArea() {
+        int area = base * altura;
+        System.out.println("A Área é: " + area);
+    }
+
+    public void exibePerimetro() {
+        int perimetro = 2 * (base + altura);
+        System.out.println("O Perímetro é: " + perimetro);
+    }
+}
+
+----------''-----------''-----------''---------''-------''--------''
+
+Exercicios POO
+
+1) public class Academico {
+
+String nome;
+int idade;
+int numero;
+String estado;
+String cidade;
+double cpf;
+double rg;
+String email;
+
+
+void registrarMatricula(){
+
+
+}
+
+void trancarMatricula(){
+
+
+}
+void renovarMatricula(){
+
+
+}
+
+void pagarMensalidade(){
+
+
+}
+void realizarProva(){
+
+
+}
+void realizarNovaChance(){
+
+
+}
+
+void historicoEscolar(){
+    
+}
+
+
+
+2) class professor:
+
+public class Professor{
+    String logradouro;
+    int numero;
+    String complemento;
+    String bairro;
+    int cep;
+    String cidade;
+    String estado;
+    int cpf;
+    int rg;
+    String email;
+    double salario;
+
+}
+
+class curso:
+
+public class Curso{
+  int codigo;
+  String nome;
+  String Turno;
+  double vagasAnuais;
+  String conceito;
+  
+
+}
+
+class Disciplina: 
+
+public class Disciplina{
+    int codigo;
+    String nome;
+    String cargaHoraria;
+}
+
+
+3) classe pessoa:
+
+public class Pessoa{
+
+    int codigo;
+    String nome;
+    String endereço;
+    int telefone;
+
+    void abrirCadastro(){
+
+    }
+   void alterarCadastro(){
+
+    }
+
+    void fecharCadastro(){
+        
+    }
+
+}
+
+class academico:
+
+
+public class Academico extends Pessoa {
+
+    boolean possuiDiplomaES;
+    String turno;
+    int matricula;
+
+    void registrarMatricula(){
+
+    }
+
+   void  pagarMensalidade(){
+
+    }
+
+    void verficarHistorico(){
+        
+    }
+}
+
+
+class funcionario:
+
+public class funcionario extends Pessoa{
+
+double salario;
+int horasTrabalhar;
+int horaChegada;
+int horaSaida;
+
+void registrarAdmissao(){
+
+}
+
+void alterarSalario(){
+
+}
+
+void baterPonto(){
+
+}
+void pedirDemissao(){
+    
+}
+}
+
+
+
+
+
+4) class pessoa:
+
+public class Pessoa{
+
+    int codigo;
+    String nome;
+    String endereço;
+    int telefone;
+
+    void abrirCadastro(){
+
+    }
+    void alterarCadastro(){
+
+    }
+
+    void fecharCadastro(){
+
+    }
+
+    void quantidadeEmprestimo(){}
+
+}
+
+class assunto:
+
+public class Assunto {
+    int codigo;
+    String descricao;
+String personagens;
+
+
+}
+
+
+class livro:
+
+public class Livro {
+
+    int codigo;
+    String titulo;
+    double preco;
+
+    void ler(){}
+void exemplaresCadastrados(){}
+}
+
+
+class exemplar:
+
+public class Exemplar {
+    int numero;
+    double dataAquisicao;
+
+    void livrosCadastrados(){}
+}
+
+
+class autor:
+
+public class Autor {
+
+    int codigo;
+    String nome;
+
+    void outrasObrasFeitas(){}
+}
+
+
+class emprestimo:
+
+public class Emprestimo extends Exemplar{
+    int numero;
+    double dataEmprestimo;
+    String prazoDevolucao;
+    String dataDevolucao;
+
+    void pessoaEmprestimo(){}
+}
+
+
+
+
+

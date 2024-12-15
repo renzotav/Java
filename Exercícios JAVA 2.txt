@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double valorFabrica;
+        int[] contadores = new int[5];
+        boolean continuar = true;
+
+        System.out.print("Digite o valor de fábrica do modelo (sem IPI): ");
+        valorFabrica = scanner.nextDouble();
+
+        while (continuar) {
+            System.out.println("Escolha um opcional:");
+            System.out.println("0 - Nenhum opcional");
+            System.out.println("1 - Trio elétrico");
+            System.out.println("2 - Ar condicionado");
+            System.out.println("3 - Direção hidráulica");
+            System.out.println("4 - Completo");
+            int opcao = scanner.nextInt();
+
+            double valorTotal = calcularValorTotal(valorFabrica, opcao);
+            System.out.println("Valor total do automóvel: R$ " + valorTotal);
+
+            contadores[opcao]++;
+
+            System.out.println("Deseja calcular novamente? (s/n)");
+            char resposta = scanner.next().charAt(0);
+            continuar = resposta == 's' || resposta == 'S';
+        }
+
+        System.out.println("Total de vezes que cada opcional foi escolhido:");
+        System.out.println("Nenhum opcional: " + contadores[0]);
+        System.out.println("Trio elétrico: " + contadores[1]);
+        System.out.println("Ar condicionado: " + contadores[2]);
+        System.out.println("Direção hidráulica: " + contadores[3]);
+        System.out.println("Completo: " + contadores[4]);
+
+        scanner.close();
+    }
+
+    public static double calcularValorTotal(double valorFabrica, int opcao) {
+        double ipi = valorFabrica * 0.08;
+        double valorComIPI = valorFabrica + ipi;
+        double valorTotal = valorFabrica;
+
+        switch (opcao) {
+            case 1: // Trio elétrico
+                valorTotal = valorComIPI + (valorComIPI * 0.02);
+                break;
+            case 2: // Ar condicionado
+                valorTotal = valorFabrica + (valorFabrica * 0.02);
+                break;
+            case 3: // Direção hidráulica
+                valorTotal = valorFabrica + (valorFabrica * 0.02);
+                break;
+            case 4: // Completo
+                double totalAdicionais = valorComIPI * 0.02 + valorFabrica * 0.02 * 2;
+                valorTotal = (valorFabrica + totalAdicionais) * 0.965; // Aplicando desconto de 3.5%
+                break;
+        }
+        return valorTotal;
+    }
+}

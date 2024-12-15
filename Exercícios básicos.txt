@@ -1,0 +1,62 @@
+
+1)
+
+public class Main {
+    public static void main(String[] args) {
+        float salario = 2500, aumento, novoSalario;
+
+
+aumento = (salario * 10/100);
+
+        novoSalario = (salario + aumento);
+
+System.out.println("O aumento recebido foi de: " + aumento);
+System.out.println("O novo salário é de: " + novoSalario);
+
+    }
+}
+
+
+
+2) public class Main {
+    public static void main(String[] args) {
+        float SalarioBase = 1500, gratificacao, imposto, salarioReceber;
+
+        gratificacao = SalarioBase * 5/100;
+        imposto = SalarioBase * 7/100;
+
+        salarioReceber = SalarioBase + gratificacao - imposto;
+
+        System.out.println("O salário a receber é: " + salarioReceber);
+
+    }
+}
+
+
+
+3) public class Main {
+    public static void main(String[] args) {
+       float deposito = 500, taxaJuros = 3, rendimento, valorTotal;
+
+       rendimento = deposito * taxaJuros/100;
+
+       valorTotal = deposito + rendimento;
+
+        System.out.println("O valor total é: " + valorTotal);
+
+    }
+}
+
+4) public class Main {
+    public static void main(String[] args) {
+       float precoFabrica = 35000, percentualDistribuidor = 25, lucroDistribuidor, percentualImposto = 15, precoFinal, valorImposto;
+
+       lucroDistribuidor = (precoFabrica * percentualDistribuidor/100);
+       valorImposto = (precoFabrica * percentualImposto/100);
+
+       precoFinal = (precoFabrica + lucroDistribuidor - valorImposto);
+
+        System.out.println("O preço final é: " + precoFinal);
+
+    }
+}

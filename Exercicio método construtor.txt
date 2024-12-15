@@ -1,0 +1,99 @@
+Exercício Gato e TestaGato:
+
+classe TestaGato:
+
+import javax.swing.JOptionPane;
+
+public class TestaGato {
+    public static void main(String[] args) {
+
+        String n = JOptionPane.showInputDialog("Digite o nome do gato: ");
+        char s = JOptionPane.showInputDialog("Digite o sexo do gato: ").charAt(0);
+        int i = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade do gato: "));
+        double p = Double.parseDouble(JOptionPane.showInputDialog("Digite o peso do gato: "));
+
+        Gato cat = new Gato(n, s, i, p);
+
+        JOptionPane.showMessageDialog(null, "O nome do gato é: " + n + "\nO sexo do gato é: " + s + "\nA idade do gato é: " + i + "\nO peso do gato é: " + p);
+    }
+}
+
+classe Gato:
+
+public class Gato{
+    String nome;
+    char sexo;
+    int idade;
+    double peso;
+
+    Gato(String nome, char sexo, int idade, double peso){
+        this.nome = nome;
+        this.sexo = sexo;
+        this.idade = idade;
+        this.peso = peso;
+    }
+}
+
+
+Exercicio peixe:
+
+classe TestaPeixe:
+
+import javax.swing.*;
+
+public class TestaPeixe {
+    public static void main(String[] args) {
+
+        Peixe p1 = new Peixe();
+
+String np = JOptionPane.showInputDialog("Digite o nome popular do peixe: ");
+String nc = JOptionPane.showInputDialog("Digite o nome cintifico do peixe: ");
+String org = JOptionPane.showInputDialog("Digite a origem do peixe: ");
+String fml = JOptionPane.showInputDialog("Digite a familia do peixe: ");
+int cpm = Integer.parseInt(JOptionPane.showInputDialog("Digite o comprimento do peixe: "));
+
+        Peixe p2 = new Peixe(np, nc, org, fml, cpm);
+
+        String np2 = JOptionPane.showInputDialog("Digite o nome popular do peixe: ");
+        String nc2 = JOptionPane.showInputDialog("Digite o nome cintifico do peixe: ");
+        String org2 = JOptionPane.showInputDialog("Digite a origem do peixe: ");
+        String fml2 = JOptionPane.showInputDialog("Digite a familia do peixe: ");
+        int cpm2 = Integer.parseInt(JOptionPane.showInputDialog("Digite o comprimento do peixe: "));
+
+        JOptionPane.showMessageDialog(null,"Os dados do peixe 1 são: " + "\n\n\nNome popular: " + np2 +"\nNome cientifico: "+ nc2 +"\nOrigem: " + org2 + "\nFamilia: " + fml2 + "\nComprimento: " + cpm2);
+        JOptionPane.showMessageDialog(null,"Os dados do peixe 2 são: " + "\n\n\nNome popular: " + p2.nomePopular +"\nNome cientifico: "+ p2.nomeCientifico +"\nOrigem: " + p2.origem + "\nFamilia: " + p2.familia + "\nComprimento: " + p2.comprimento);
+
+
+
+    }
+}
+
+
+
+classe peixe: 
+
+public class Peixe {
+    String nomePopular;
+    String nomeCientifico;
+    String familia;
+    String origem;
+    int comprimento;
+
+    Peixe(){
+this.nomePopular = "";
+this.nomeCientifico = "";
+this.origem = "";
+this.familia = "";
+this.comprimento = 0;
+
+    }
+
+    Peixe(String nomePopular, String nomeCientifico, String familia, String origem, int comprimento){
+        this.comprimento = comprimento;
+        this.nomeCientifico = nomeCientifico;
+        this.familia = familia;
+        this.origem = origem;
+        this.nomePopular = nomePopular;
+    }
+
+}

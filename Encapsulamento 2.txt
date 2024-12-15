@@ -1,0 +1,78 @@
+Classe principal:
+
+
+import javax.swing.JOptionPane;
+
+public class OperadorEstoque {
+    public static void main(String[] args) {
+        Produto produto = new Produto();
+
+        String codigo = JOptionPane.showInputDialog("Informe o código do produto:");
+        produto.setCodigo(Integer.parseInt(codigo));
+
+        String descricao = JOptionPane.showInputDialog("Informe a descrição do produto:");
+        produto.setDescricao(descricao);
+
+        while (true) {
+            String operacao = JOptionPane.showInputDialog("Informe a operação desejada (E: Entrada, S: Saída):");
+
+            if (operacao.equalsIgnoreCase("E")) {
+                String quantidadeEntrada = JOptionPane.showInputDialog("Informe a quantidade de entrada:");
+                produto.registrarEntrada(Integer.parseInt(quantidadeEntrada));
+            } else if (operacao.equalsIgnoreCase("S")) {
+                String quantidadeSaida = JOptionPane.showInputDialog("Informe a quantidade de saída:");
+                produto.registrarSaida(Integer.parseInt(quantidadeSaida));
+            } else {
+                JOptionPane.showMessageDialog(null, "Operação inválida. Tente novamente.");
+                continue;
+            }
+
+            JOptionPane.showMessageDialog(null, "Saldo atual do produto: " + produto.getSaldo());
+            JOptionPane.showMessageDialog(null, "Programa finalizado");
+            break;
+        }
+    }
+}
+
+
+Classe produto: public class Produto {
+    private int codigo;
+    private String descricao;
+    private int saldo;
+
+    public Produto() {}
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public void registrarEntrada(int quantidade) {
+        saldo += quantidade;
+    }
+
+    public void registrarSaida(int quantidade) {
+        saldo -= quantidade;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" + "codigo=" + codigo + ", descricao='" + descricao + '\'' + ", saldo=" + saldo + '}';
+    }
+}
+

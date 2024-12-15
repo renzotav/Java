@@ -1,0 +1,103 @@
+1) import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+float novoSalario, valorAumento;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite seu salário: ");
+        float salario = Integer.parseInt(scanner.nextLine());
+        System.out.println("\n Digite a porcentagem de aumento: ");
+        float porcentagemAumento = Integer.parseInt(scanner.nextLine());
+        valorAumento = salario * porcentagemAumento/100;
+        novoSalario = salario + valorAumento;
+        System.out.println("\nSeu novo salario é: " + novoSalario + " reais" + "\nSeu aumento foi de: " + valorAumento + " reais");
+
+scanner.close();
+
+
+
+    }
+} 
+
+2) import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+float salarioReceber, valorImposto, valorGratificacao;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite seu salário: ");
+        float salarioBase = Integer.parseInt(scanner.nextLine());
+        valorImposto = salarioBase * 7/100;
+        valorGratificacao = salarioBase * 5/100;
+
+        salarioReceber = salarioBase + valorGratificacao - valorImposto;
+        System.out.println("O salário a receber é de: " + salarioReceber);
+
+
+
+scanner.close();
+
+
+
+    }
+}
+3) import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+float Rendimento, valorTotal;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o valor do depósito: ");
+        float valorDeposito = Integer.parseInt(scanner.nextLine());
+        System.out.println("Digite o valor da taxa: ");
+        float valorTaxa = Integer.parseInt(scanner.nextLine());
+        Rendimento = valorDeposito * valorTaxa/100;
+
+        valorTotal = valorDeposito + Rendimento;
+
+        
+        System.out.println("O valor somando o rendimento é de: " + valorTotal);
+
+
+
+scanner.close();
+
+
+
+    }
+}
+
+4) import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+float lucroDistribuidor, valorImposto, precoFinal;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o preço do veículo: ");
+        float precoFabrica = Integer.parseInt(scanner.nextLine());
+        System.out.println("Digite o percentual da taxa: ");
+        float taxaImposto = Integer.parseInt(scanner.nextLine());
+        System.out.println("Digite o pencentual de lucro em cima da venda: ");
+        float porcDistribuidor = Integer.parseInt(scanner.nextLine());
+
+        lucroDistribuidor = precoFabrica * porcDistribuidor/100;
+        valorImposto = precoFabrica * taxaImposto/100;
+        precoFinal = precoFabrica - valorImposto;
+
+
+        System.out.println("O valor do imposto é de: " + valorImposto);
+        System.out.println("\nO lucro do distribuidor foi de: " + lucroDistribuidor);
+        System.out.println("\nO preço final do veículo foi de: " + precoFinal);
+
+
+
+scanner.close();
+
+
+
+    }
+}
